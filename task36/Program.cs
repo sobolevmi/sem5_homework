@@ -1,4 +1,5 @@
-﻿int [] createNewArray (int size, int start, int end)
+﻿// Задать случайный массив и посчитать сумму его нечетных элементов
+int [] createNewArray (int size, int start, int end)
 {
     int [] massive = new int [size];
     for (int index = 0; index < size; index++)
