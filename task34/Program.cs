@@ -1,4 +1,6 @@
-﻿int [] createNewArray (int size, int start, int end)
+﻿// Задать одномерный массив, заполненный случайными положительными трехзначными числами, 
+// и показать количество четных чисел в массиве
+int [] createNewArray (int size, int start, int end)
 {
     int [] massive = new int [size];
     for (int i = 0; i < size; i++)
