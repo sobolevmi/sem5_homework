@@ -1,15 +1,16 @@
 ﻿// Задать случайно сгенерированный массив и высчитать разницу между максимальным и минимальным элементами
-int [] createNewArray (int size, int start, int end)
+double [] createNewArray (int size, int start, int end)
 {
-    int [] massive = new int [size];
+    double [] massive = new double [size];
+    Random rand = new Random ();
     for (int index = 0; index < size; index++)
     {
-        massive [index] = new Random().Next (start, end + 1);
+        massive [index] = rand.Next (start, end + 1) + rand.NextDouble ();
     }
     return massive;
 }
 
-void printArray (int [] arr)
+void printArray (double [] arr)
 {
     int i = 0;
     for (i = 0; i < arr.Length - 1; i++)
@@ -22,10 +23,10 @@ void printArray (int [] arr)
     }
 }
 
-int maxMinusMin (int [] mas)
+double maxMinusMin (double [] mas)
 {
-    int min = mas [0];
-    int max = mas [0];
+    double min = mas [0];
+    double max = mas [0];
     for (int j = 1; j < mas.Length; j++)
     {
         if (mas [j] < min)
@@ -37,7 +38,7 @@ int maxMinusMin (int [] mas)
             max = mas [j];
         }
     }
-    int result = max - min;
+    double result = max - min;
     return result;
 }
 
@@ -47,8 +48,8 @@ Console.WriteLine ("Введите начальное число диапазо�
 int startNumber = Convert.ToInt32 (Console.ReadLine ());
 Console.WriteLine ("Введите конечное число диапазона чисел в массиве: ");
 int endNumber = Convert.ToInt32 (Console.ReadLine ());
-int [] array = createNewArray (length, startNumber, endNumber);
+double [] array = createNewArray (length, startNumber, endNumber);
 Console.Write ("[");
 printArray (array);
-int res = maxMinusMin (array);
+double res = maxMinusMin (array);
 Console.WriteLine ($"] -> {res}");
